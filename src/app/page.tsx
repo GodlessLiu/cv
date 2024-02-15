@@ -9,11 +9,11 @@ export default function App() {
     const { staticData, local } = useI18n();
     return (
         <div className="app min-h-screen dark:bg-black">
-            <div className="menu fixed top-0 p-2 flex flex-row justify-end w-full">
+            <div className="menu fixed bg-white dark:bg-black opacity-90 top-0 p-2 flex flex-row justify-end w-full">
                 <LanguageUi className=" mr-2" />
                 <ThemeSwitch />
             </div>
-            <main className="mx-auto max-w-4xl md:p-16 p-2" id="main">
+            <main className="mx-auto max-w-4xl md:p-16 p-2 pt-10" id="main">
                 <div>
                     <TypographyH1 className="mb-1">{staticData!.name + ' ' + staticData!.status}</TypographyH1>
                     <TypographyH4 className="mb-1">{staticData!.contactInfo.phone} | {staticData!.contactInfo.email} | {staticData!.contactInfo.home}</TypographyH4>
