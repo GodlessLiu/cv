@@ -3,11 +3,6 @@
     src: url("@/assets/font/JetBrainsMono-Regular.ttf");
 }
 
-body {
-    font-family: 'mono';
-    @apply text-black dark:text-white;
-}
-
 a {
     @apply text-gray-400 decoration-[none];
 }

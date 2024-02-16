@@ -16,7 +16,7 @@ export const LanguageUi: FC<{ className?: string }> = ({ className }) => {
     return <div className={cn(className)}>
         <DropdownMenu>
             <DropdownMenuTrigger>
-                <HeroiconsLanguage20Solid fontSize={20} />
+                <HeroiconsLanguage20Solid fontSize={24} />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuRadioGroup value={local} onValueChange={setlg}>

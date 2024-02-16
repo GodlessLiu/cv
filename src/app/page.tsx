@@ -8,7 +8,7 @@ import { CommandMenu } from "@/components/command-menu";
 export default function App() {
     const { staticData, local } = useI18n();
     return (
-        <div className="app min-h-screen bg-white dark:bg-black">
+        <div className="app min-h-screen text-gray-700 dark:text-gray-200 bg-white dark:bg-black">
             <div className="menu fixed  opacity-90 top-0 p-2 flex flex-row justify-end w-full">
                 <LanguageUi className=" mr-2" />
                 <ThemeSwitch />

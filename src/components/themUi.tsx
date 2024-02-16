@@ -53,7 +53,7 @@ export const ThemeSwitch: FC<{ className?: string }> = ({ className }) => {
     return (
         <span className={cn(className)} onClick={handleThemeChange}>
             {
-                isDark ? <MaterialSymbolsDarkModeOutlineRounded fontSize={20} /> : <MaterialSymbolsSunnyOutline fontSize={20} />
+                isDark ? <MaterialSymbolsDarkModeOutlineRounded fontSize={24} /> : <MaterialSymbolsSunnyOutline fontSize={24} />
             }
         </span>
     )
