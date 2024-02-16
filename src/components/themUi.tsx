@@ -1,19 +1,60 @@
-import { useTheme } from "@/components/theme-provider";
-import { FC } from "react";
-import { Switch } from "@/components/ui/switch";
+import { useTheme } from "@/components/provider/theme-provider";
+import { FC, MouseEvent } from "react";
+import { MaterialSymbolsSunnyOutline } from "@/components/icons/sun";
+import { MaterialSymbolsDarkModeOutlineRounded } from "@/components/icons/moon";
 import { cn } from "@/lib/utils";
 
 export const ThemeSwitch: FC<{ className?: string }> = ({ className }) => {
     const { setTheme, theme } = useTheme()
-    const handleThemeChange = (e: boolean) => {
-        if (e) {
-            setTheme('dark')
-        } else {
-            setTheme('light')
+    let isDark = theme === 'dark'
+    const handleThemeChange = (event: MouseEvent<HTMLSpanElement>) => {
+        function changeTheme(flag: boolean) {
+            flag ? setTheme('dark') : setTheme('light')
         }
+        //@ts-expect-error experimental API
+        const isAppearanceTrasiation = document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        if (!isAppearanceTrasiation) {
+            changeTheme(!isDark)
+            return
+        }
+        const x = event.clientX
+        const y = event.clientY
+        const endRadius = Math.hypot(
+            Math.max(x, innerWidth - x),
+            Math.max(y, innerHeight - y),
+        )
+        // @ts-expect-error: Transition API
+        const transition = document.startViewTransition(() => {
+            changeTheme(!isDark)
+        })
+        transition.ready
+            .then(() => {
+                const clipPath = [
+                    `circle(0px at ${x}px ${y}px)`,
+                    `circle(${endRadius}px at ${x}px ${y}px)`,
+                ]
+                document.documentElement.animate(
+                    {
+                        clipPath: isDark
+                            ? [...clipPath].reverse()
+                            : clipPath,
+                    },
+                    {
+                        duration: 400,
+                        easing: 'ease-in',
+                        pseudoElement: isDark
+                            ? '::view-transition-old(root)'
+                            : '::view-transition-new(root)',
+                    },
+                )
+            })
+
     }
-    const isDark = theme === 'dark'
     return (
-        <Switch className={cn(className)} onCheckedChange={handleThemeChange} checked={isDark} />
+        <span className={cn(className)} onClick={handleThemeChange}>
+            {
+                isDark ? <MaterialSymbolsDarkModeOutlineRounded fontSize={20} /> : <MaterialSymbolsSunnyOutline fontSize={20} />
+            }
+        </span>
     )
 }

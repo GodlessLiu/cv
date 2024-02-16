@@ -1,5 +1,5 @@
 import { TypographyH1, TypographyH3, TypographyH4 } from "@/components/typography";
-import { useI18n } from "@/components/language-provider";
+import { useI18n } from "@/components/provider/language-provider";
 import { LanguageUi } from "@/components/languageUi";
 import { ThemeSwitch } from "@/components/themUi";
 import RenderInfo from "@/components/renderInfo";
@@ -8,8 +8,8 @@ import { CommandMenu } from "@/components/command-menu";
 export default function App() {
     const { staticData, local } = useI18n();
     return (
-        <div className="app min-h-screen dark:bg-black">
-            <div className="menu fixed bg-white dark:bg-black opacity-90 top-0 p-2 flex flex-row justify-end w-full">
+        <div className="app min-h-screen bg-white dark:bg-black">
+            <div className="menu fixed  opacity-90 top-0 p-2 flex flex-row justify-end w-full">
                 <LanguageUi className=" mr-2" />
                 <ThemeSwitch />
             </div>

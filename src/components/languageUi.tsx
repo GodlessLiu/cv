@@ -4,7 +4,7 @@ import {
     DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { HeroiconsLanguage20Solid } from "@/components/icons/languageIcon"
-import { useI18n } from "@/components/language-provider"
+import { useI18n } from "@/components/provider/language-provider"
 import { I18nHandeleData } from "@/types"
 import { cn } from "@/lib/utils"
 
