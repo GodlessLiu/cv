@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-const keyWords = [/vue\d*/, 'axios', 'element-plus', 'ElementPlus', 'github', 'git', 'chrome', 'node', 'typescript', 'Javascript', /es\d/, 'webpack', 'vite', 'webAssemply', 'webContainer', 'linux', 'AntDesign']
+const keyWords = [/vue\d*/, 'axios', 'tailwindcss', 'unocss', 'element-plus', 'ElementPlus', 'github', 'git', 'chrome', 'node', 'typescript', 'Javascript', /es\d/, 'webpack', 'vite', 'webAssemply', 'webContainer', 'linux', 'AntDesign']
 
 const urlRegex = /(https?:\/\/(([a-zA-Z0-9]+-?)+[a-zA-Z0-9]+\.)+[a-zA-Z]+)(:\d+)?(\/.*)?(\?.*)?(#.*)?/
 

@@ -76,6 +76,7 @@ const DataZh: ResumeData = {
                     type: 'listWithoutTitle',
                     lists: [
                         "熟练使用 Javascript 进行编程,对异步编程有较为深入的理解,熟练掌握 ES5 / ES6 + 语法",
+                        "熟练使用 Tailwindcss 和 unocss 进行项目开发",
                         "熟练使用 Axios 进行网络请求发送,并且深入 Axios 源码",
                         "熟练使用 Vue2 / Vue3 进行项目开发",
                         "熟练使用 Webpack / vite 对项目进行打包,开发过vite插件",
