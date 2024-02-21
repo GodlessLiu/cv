@@ -4,6 +4,7 @@ import { LanguageUi } from "@/components/languageUi";
 import { ThemeSwitch } from "@/components/themUi";
 import RenderInfo from "@/components/renderInfo";
 import { CommandMenu } from "@/components/command-menu";
+import { MdiGithub } from "@/components/icons/github";
 
 export default function App() {
     const { staticData, local } = useI18n();
@@ -12,6 +13,9 @@ export default function App() {
             <div className="menu fixed  opacity-90 top-0 p-2 flex flex-row justify-end w-full">
                 <LanguageUi className=" mr-2" />
                 <ThemeSwitch />
+                <a href="https://github.com/GodlessLiu/cv" className="text-black dark:text-white ml-2" target="_blank" rel="noopener noreferrer">
+                    <MdiGithub fontSize={24} />
+                </a>
             </div>
             <main className="mx-auto max-w-4xl md:p-16 p-2 pt-10" id="main">
                 <div>
